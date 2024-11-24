@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import LandingCar4 from "../assets/LandingCar4.jpg"
 import LandingCar5 from "../assets/LandingCar5.jpg"
+import RollsRoyceCar from "../assets/RollsRoyceCar.png"
+import BMWCar from "../assets/BMWCar.png"
 const HomePage = () => {
 
   const services = [
@@ -29,6 +31,29 @@ const HomePage = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.",
       image: LandingCar5
     },
+  ]
+
+  const fleet = [
+    {
+      id: 1,
+      image: RollsRoyceCar,
+      modelName: "RollsRoyce"
+    },
+    {
+      id: 2,
+      image: RollsRoyceCar,
+      modelName: "Bentley"
+    },
+    {
+      id: 3,
+      image: RollsRoyceCar,
+      modelName: "Escalade"
+    },
+    {
+      id: 4,
+      image: BMWCar,
+      modelName: "BMW"
+    }
   ]
   return (
     <div className=' px-[5%] '>
@@ -74,7 +99,7 @@ const HomePage = () => {
       </section>
       {/* OUR FLEET */}
       <section className='h-[100vh] flex flex-col '>
-          {/* text */}
+        {/* text */}
         <div className='flex h-[10%] mb-8'>
           <h1 className='w-[40%] flex pr-8 justify-end text-5xl font-bold'>Our Fleet</h1>
           <h2 className='w-[40%] font-medium text-gray-700'>We offer an extensive fleet of vehicles including sedans, limousines and crossovers</h2>
@@ -85,16 +110,21 @@ const HomePage = () => {
           <p className='py-2 px-6 bg-gray-200 flex items-center rounded-lg border-r-4'>Luxury</p>
           <p className='py-2 px-6 bg-gray-200 flex items-center rounded-lg border-r-4'>Business</p>
           <p className='py-2 px-6 bg-gray-200 flex items-center rounded-lg border-r-4'>Crossovers</p>
-          
+
         </div>
         {/* slide */}
-        <div className='border h-1/2 grid grid-cols-3 px-6 py-4'>
-          <div className='border flex flex-col'>
-            <div className='h-[70%] border w-full'>
-            <img src="" alt="" />
+        <div className='border h-1/2 grid grid-cols-4 gap-x-6 px-6 py-4'>
+
+          {fleet.map((fleetCar) => (
+            <div className='border flex flex-col'>
+              <div className='h-[70%] border w-full mb-4 rounded-xl'>
+                <img src={fleetCar.image} alt={fleetCar.modelName} />
+              </div>
+              <p className='text-lg font-bold'>{fleetCar.modelName}</p>
             </div>
-            <p>Model name</p>
-          </div>
+          ))}
+          
+
         </div>
 
 
