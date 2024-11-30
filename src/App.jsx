@@ -4,6 +4,9 @@ import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
 import BenzPage from './pages/BenzPage'
 
 import CarDisplayLayout from './Layout/CarDisplayLayout'
+import FleetPage from './pages/FleetPage'
+import RangeRover from './pages/RangeRover'
+import { ToastContainer } from 'react-toastify'
 
 
 
@@ -14,18 +17,32 @@ function App() {
     element:<HomePage/>
   },
   {
-    path:"/cars",
+    path:"/fleet",
+    element:<FleetPage/>
+   
+  },
+  {
+    path:"/fleet/car",
     element:<CarDisplayLayout/>,
     children:[
       {
-      path:"mercedes-benz",
-      element:<BenzPage/>
-    }
-    
-  ]
+        path:"mercedes-benz",
+        element:<BenzPage/>
+      },
+      {
+        path:"rangerover",
+        element:<RangeRover/>
+      }
+    ]
   }
  ])
- return <RouterProvider router = {router}/>
+ return (
+  <div>
+    <RouterProvider router = {router}/>
+    <ToastContainer/>
+  </div>
+ )
+
 }
 
 export default App

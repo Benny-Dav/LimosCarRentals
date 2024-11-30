@@ -1,5 +1,49 @@
 #carName{
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: gray;
+  -webkit-text-stroke-color: #B71C1C;
   
+}
+
+/* Override background and text color */
+.react-datepicker {
+  width:120%;
+  display:flex;
+  /* background-color: #B71C1C; Dark background */
+  color: #f9f9f9; /* Light text */
+  border: 1px solid black; /* Red border */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Change header style (month/year navigation) */
+.react-datepicker__header {
+  /* background-color: #B71C1C; Red background */
+  border-bottom: 1px solid #FF7043; /* Orange-red border */
+  color: black; /* White text */
+}
+
+/* Selected date styling */
+.react-datepicker__day--selected {
+  background-color: #B71C1C; /* Red background for selected date */
+  color: black; /* White text */
+}
+
+/* Hover effect for dates */
+.react-datepicker__day:hover {
+  background-color: #FF7043; /* Orange-red hover effect */
+  color: #fff;
+}
+
+/* Customize time picker */
+.react-datepicker__time-container {
+  background-color: #2e2e2e;
+  color: black;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #B71C1C; /* Red for selected time */
+  color: black;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: #FF7043; /* Orange-red hover */
 }
